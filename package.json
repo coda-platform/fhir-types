@@ -1,0 +1,19 @@
+{
+  "name": "fhir-types",
+  "version": "1.0.2",
+  "description": "FHIR templates for the CODA project.",
+  "main": "./index.js",
+  "scripts": {
+    "generate": "node ./generateDictionaries",
+    "test": "jasmine-node spec/"
+  },
+  "homepage": "",
+  "repository": "",
+  "author": "Kip Brown, Rajeev Das, Louis Mullie, Pascal St-Onge",
+  "license": "MIT",
+  "dependencies": {
+    "@asymmetrik/fhir-json-schema-validator": "^0.9.5",
+    "jasmine": "^3.6.1",
+    "jasmine-node": "^3.0.0"
+  }
+}

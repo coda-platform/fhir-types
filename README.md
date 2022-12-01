@@ -7,7 +7,7 @@
 
 - **Description:** This repository contains reference FHIR templates in JSON format for resources of interest for the CODA project. The templates contain dummy data and are tested against the FHIR schema using automated testing.
 - **Primary author(s):** Jeffrey Li [[@JeffreyLi16](https://github.com/JeffreyLi16)], Louis Mullie [[@louism](https://github.com/louismullie)], Pascal St-Onge [[@stongepa](https://github.com/stongepa)].
-- **Contributors:** Julien Levesque [[@JulienL3vesque](https://github.com/JulienL3vesque)], Rajeev Das [[@rajeevdas2507](https://github.com/rajeevdas2507)], Rima Bouchakri [[@Rima-B](https://github.com/Rima-B)].
+- **Contributors:** Julien Levesque [[@JulienL3vesque](https://github.com/JulienL3vesque)], Rajeev Das [[@rajeevdas2507](https://github.com/rajeevdas2507)], Rima Bouchakri [[@Rima-B](https://github.com/Rima-B)], Kip Brown.
 - **License:** The code in this repository is released under the GNU General Public License, V3.
 
 ## Templates
@@ -34,22 +34,18 @@
 
 ## Install
 
-In order to install, clone the repository and install the dependencies:
+To install, clone the repository and install the dependencies:
 
 ```
-git clone https://github.com/CODA-19/fhir-templates
-cd fhir-templates
+git clone https://github.com/coda-platform/fhir-types
+cd fhir-types
 npm install
 ```
 
 ## Tests
 
-Tests are automatically run on Travis. In order to run tests manually, run:
+To execute tests manually, run:
 
 ```
-jasmine
+npm run test
 ```
-
-## Authors
-
-Kip Brown, Rajeev Das, Louis Mullie, Pascal St-Onge

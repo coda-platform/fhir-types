@@ -12,17 +12,17 @@
 
 ## Templates
 
-- Encounter
+- [Encounter](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Encounter.js)
 - ImagingStudy
 - Location - bed
 - Location - ward
 - MedicationAdministration
 - Observation - Culture data
-- Observation - Lab data
+- [Observation - Lab data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-Labs.js)
 - Observation - PCR data
 - Observation - Ventilation data
 - Observation - Vital signs
-- Patient
+- [Patient](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Patient.js)
 - Procedure
 - ServiceRequest
 

@@ -29,11 +29,11 @@ Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.
 - Observation - Vital signs
 - [Patient](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Patient.js)
 - [Procedure](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Procedure.js)
-- ServiceRequest
+- [ServiceRequest](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/ServiceRequest.js)
 
 ## Requirements
 
-- NodeJS version 12+
+- NodeJS version 16+
 - Node package manager (NPM)
 
 ## Install

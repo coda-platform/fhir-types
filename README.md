@@ -22,9 +22,9 @@ Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.
 - [Location - bed](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-bed.js)
 - [Location - ward](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-ward.js)
 - [MedicationAdministration](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/MedicationAdministration.js)
-- Observation - Culture data
+- [Observation - Culture data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-Culture.js)
 - [Observation - Lab data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-Labs.js)
-- Observation - PCR data
+- [Observation - PCR data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-PCR.js)
 - Observation - Ventilation data
 - Observation - Vital signs
 - [Patient](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Patient.js)

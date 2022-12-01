@@ -10,6 +10,10 @@
 - **Contributors:** Julien Levesque [[@JulienL3vesque](https://github.com/JulienL3vesque)], Rajeev Das [[@rajeevdas2507](https://github.com/rajeevdas2507)], Rima Bouchakri [[@Rima-B](https://github.com/Rima-B)], Kip Brown.
 - **License:** The code in this repository is released under the GNU General Public License, V3.
 
+## FHIR version
+
+Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.schema.json.zip) of the FHIR schema definition.
+
 ## Templates
 
 - [Encounter](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Encounter.js)

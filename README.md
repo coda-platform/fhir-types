@@ -16,7 +16,7 @@
 - [Condition](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Condition.js)
 - [ImagingStudy](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/ImagingStudy.js)
 - Location - bed
-- [Location - ward](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-Ward.js)
+- [Location - ward](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-ward.js)
 - MedicationAdministration
 - Observation - Culture data
 - [Observation - Lab data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-Labs.js)

@@ -21,7 +21,7 @@ Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.
 - [ImagingStudy](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/ImagingStudy.js)
 - Location - bed
 - [Location - ward](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-ward.js)
-- MedicationAdministration
+- [MedicationAdministration](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/MedicationAdministration.js)
 - Observation - Culture data
 - [Observation - Lab data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-Labs.js)
 - Observation - PCR data

@@ -46,7 +46,7 @@ cd fhir-types
 npm install
 ```
 
-## Generate export types
+## Generate terminology dictionary
 
 To generate the terminology dictionary and update the auto-generated `index.js`, execute:
 
@@ -54,7 +54,7 @@ To generate the terminology dictionary and update the auto-generated `index.js`,
 npm run generate
 ```
 
-The export types are used in the [dashboard app](https://github.com/coda-platform/dashboard-app).
+An example of how to require the terminology dictionary, by requiring `fhir-types` as a git submodule, can be found in the [dashboard app](https://github.com/coda-platform/dashboard-app) repository.
 
 ## Tests
 

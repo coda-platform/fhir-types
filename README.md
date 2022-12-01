@@ -5,7 +5,7 @@
 
 ### Overview
 
-- **Description:** This repository contains reference FHIR templates in JSON format for resources of interest for the CODA project. The templates contain dummy data and are validated against the FHIR schema. The repository exports type information that can be accessed by uing `fhir-types` as a git submodule.
+- **Description:** This repository contains reference FHIR templates in JSON format for resources of interest for the CODA project. The templates contain dummy data and are validated against the FHIR schema. The repository exports a FHIR terminology dictionary that can be accessed by uing `fhir-types` as a git submodule.
 - **Primary author(s):** Jeffrey Li [[@JeffreyLi16](https://github.com/JeffreyLi16)], Louis Mullie [[@louism](https://github.com/louismullie)], Pascal St-Onge [[@stongepa](https://github.com/stongepa)].
 - **Contributors:** Julien Levesque [[@JulienL3vesque](https://github.com/JulienL3vesque)], Rajeev Das [[@rajeevdas2507](https://github.com/rajeevdas2507)], Rima Bouchakri [[@Rima-B](https://github.com/Rima-B)], Kip Brown.
 - **License:** The code in this repository is released under the GNU General Public License, V3.

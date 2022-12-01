@@ -18,8 +18,8 @@ Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.
 
 - [Patient](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Patient.js)
 - [Encounter](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Encounter.js)
-- [Location - bed](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-bed.js)
-- [Location - ward](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-ward.js)
+- [Location - Bed](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-bed.js)
+- [Location - Ward](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-ward.js)
 - [Observation - Culture data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-Culture.js)
 - [Observation - Lab data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-Labs.js)
 - [Observation - PCR data](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Observation-PCR.js)

@@ -28,7 +28,7 @@ Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.
 - Observation - Ventilation data
 - Observation - Vital signs
 - [Patient](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Patient.js)
-- Procedure
+- [Procedure](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Procedure.js)
 - ServiceRequest
 
 ## Requirements

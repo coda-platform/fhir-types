@@ -46,6 +46,14 @@ cd fhir-types
 npm install
 ```
 
+## Generate dictionary
+
+To generate the terminology dictionary, which automatically generates `index.js`, execute:
+
+```
+npm run generate
+```
+
 ## Tests
 
 To execute tests manually, run:

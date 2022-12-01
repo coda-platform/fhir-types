@@ -13,6 +13,7 @@
 ## Templates
 
 - [Encounter](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Encounter.js)
+- [Condition](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Condition.js)
 - ImagingStudy
 - Location - bed
 - Location - ward

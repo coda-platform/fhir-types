@@ -96,6 +96,24 @@ describe("Observation-PCR", function () {
   });
 });
 
+describe("Observation-Vent", function () {
+  const templateFileName = "./lib/templates/Observation-Vent.js";
+
+  it("should be readable and valid JSON", function () {
+    const patientJson = loadTemplate(templateFileName);
+  });
+
+  it("should validate against the FHIR schema", function () {
+    const patientJson = loadTemplate(templateFileName);
+    const validationWarnings = FHIRValidator.validate(patientJson);
+    expect(validationWarnings.length).toBe(
+      0,
+      "Error(s) identified during schema validation."
+    );
+    if (validationWarnings.length > 0) console.log(validationWarnings);
+  });
+});
+
 describe("Observation-VitalSigns", function () {
   const templateFileName = "./lib/templates/Observation-VitalSigns.js";
 
@@ -196,6 +214,78 @@ describe("ImagingStudy", function () {
   it("should validate against the FHIR schema", function () {
     const patientJson = loadTemplate(templateFileName);
     const validationWarnings = FHIRValidator.validate(patientJson);
+    expect(validationWarnings.length).toBe(
+      0,
+      "Error(s) identified during schema validation."
+    );
+    if (validationWarnings.length > 0) console.log(validationWarnings);
+  });
+});
+
+describe("Location-Bed", function () {
+  const templateFileName = "./lib/templates/Location-bed.js";
+
+  it("should be readable and valid JSON", function () {
+    const locationJson = loadTemplate(templateFileName);
+  });
+
+  it("should validate against the FHIR schema", function () {
+    const locationJson = loadTemplate(templateFileName);
+    const validationWarnings = FHIRValidator.validate(locationJson);
+    expect(validationWarnings.length).toBe(
+      0,
+      "Error(s) identified during schema validation."
+    );
+    if (validationWarnings.length > 0) console.log(validationWarnings);
+  });
+});
+
+describe("Location-Ward", function () {
+  const templateFileName = "./lib/templates/Location-ward.js";
+
+  it("should be readable and valid JSON", function () {
+    const locationJson = loadTemplate(templateFileName);
+  });
+
+  it("should validate against the FHIR schema", function () {
+    const locationJson = loadTemplate(templateFileName);
+    const validationWarnings = FHIRValidator.validate(locationJson);
+    expect(validationWarnings.length).toBe(
+      0,
+      "Error(s) identified during schema validation."
+    );
+    if (validationWarnings.length > 0) console.log(validationWarnings);
+  });
+});
+
+describe("MedicationAdministration", function () {
+  const templateFileName = "./lib/templates/MedicationAdministration.js";
+
+  it("should be readable and valid JSON", function () {
+    const medAdmJson = loadTemplate(templateFileName);
+  });
+
+  it("should validate against the FHIR schema", function () {
+    const medAdmJson = loadTemplate(templateFileName);
+    const validationWarnings = FHIRValidator.validate(medAdmJson);
+    expect(validationWarnings.length).toBe(
+      0,
+      "Error(s) identified during schema validation."
+    );
+    if (validationWarnings.length > 0) console.log(validationWarnings);
+  });
+});
+
+describe("ServiceRequest", function () {
+  const templateFileName = "./lib/templates/ServiceRequest.js";
+
+  it("should be readable and valid JSON", function () {
+    const servReqJson = loadTemplate(templateFileName);
+  });
+
+  it("should validate against the FHIR schema", function () {
+    const servReqJson = loadTemplate(templateFileName);
+    const validationWarnings = FHIRValidator.validate(servReqJson);
     expect(validationWarnings.length).toBe(
       0,
       "Error(s) identified during schema validation."

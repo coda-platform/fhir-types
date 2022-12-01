@@ -19,7 +19,7 @@ Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.
 - [Encounter](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Encounter.js)
 - [Condition](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Condition.js)
 - [ImagingStudy](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/ImagingStudy.js)
-- Location - bed
+- [Location - bed](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-bed.js)
 - [Location - ward](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/Location-ward.js)
 - [MedicationAdministration](https://github.com/coda-platform/fhir-types/blob/main/lib/templates/MedicationAdministration.js)
 - Observation - Culture data

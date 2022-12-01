@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.com/CODA-19/fhir-templates.svg?branch=master)](https://travis-ci.com/github/CODA-19/fhir-templates)
+[![Schema validation](https://github.com/coda-platform/fhir-types/actions/workflows/publish.yml/badge.svg)](https://github.com/coda-platform/fhir-types/actions/workflows/publish.yml)
 <br />
 
 # FHIR Types

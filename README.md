@@ -12,7 +12,7 @@
 
 ## FHIR version
 
-Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.schema.json.zip) of the FHIR schema definition.
+Types are currently validated against [version 4.0](http://hl7.org/fhir/R4/fhir.schema.json.zip) of the FHIR schema definition. Tests are run automatically every time the repository is modified.
 
 ## Templates
 

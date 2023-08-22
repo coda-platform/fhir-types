@@ -40,26 +40,6 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "category",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "coding",
-          "type": "array",
-          "subpaths": [
-            {
-              "name": "system",
-              "type": "string"
-            },
-            {
-              "name": "code",
-              "type": "string"
-            }
-          ]
-        }
-      ]
-    },
-    {
       "name": "onsetDateTime",
       "type": "dateTime"
     },
@@ -104,6 +84,10 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "class.display",
+      "type": "string"
+    },
+    {
       "name": "subject.reference",
       "type": "string"
     },
@@ -140,34 +124,6 @@ export const AttributesByResourceType = {
     {
       "name": "period.end",
       "type": "dateTime"
-    },
-    {
-      "name": "hospitalization.admitSource.coding",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "system",
-          "type": "string"
-        },
-        {
-          "name": "code",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "priority.coding",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "system",
-          "type": "string"
-        },
-        {
-          "name": "code",
-          "type": "string"
-        }
-      ]
     }
   ],
   "ImagingStudy": [
@@ -211,7 +167,7 @@ export const AttributesByResourceType = {
         },
         {
           "name": "value",
-          "type": "dateTime"
+          "type": "string"
         }
       ]
     },
@@ -265,7 +221,7 @@ export const AttributesByResourceType = {
       "subpaths": [
         {
           "name": "uid",
-          "type": "dateTime"
+          "type": "string"
         },
         {
           "name": "number",
@@ -334,10 +290,6 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "name",
-      "type": "string"
-    },
-    {
       "name": "identifier",
       "type": "array",
       "subpaths": [
@@ -392,6 +344,10 @@ export const AttributesByResourceType = {
           ]
         }
       ]
+    },
+    {
+      "name": "partOf.reference",
+      "type": "string"
     }
   ],
   "MedicationAdministration": [
@@ -542,6 +498,10 @@ export const AttributesByResourceType = {
             {
               "name": "code",
               "type": "string"
+            },
+            {
+              "name": "display",
+              "type": "string"
             }
           ]
         }
@@ -549,6 +509,10 @@ export const AttributesByResourceType = {
     },
     {
       "name": "effectiveDateTime",
+      "type": "dateTime"
+    },
+    {
+      "name": "issued",
       "type": "dateTime"
     },
     {
@@ -582,38 +546,60 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "bodySite.coding",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "system",
-          "type": "string"
-        },
-        {
-          "name": "code",
-          "type": "string"
-        },
-        {
-          "name": "display",
-          "type": "string"
-        }
-      ]
-    },
-    {
       "name": "valueQuantity.value",
-      "type": "integer"
+      "type": "string"
     },
     {
       "name": "valueQuantity.unit",
       "type": "string"
     },
     {
-      "name": "valueQuantity.system",
-      "type": "string"
+      "name": "interpretation",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "coding",
+          "type": "array",
+          "subpaths": [
+            {
+              "name": "code",
+              "type": "string"
+            },
+            {
+              "name": "system",
+              "type": "string"
+            },
+            {
+              "name": "display",
+              "type": "string"
+            }
+          ]
+        },
+        {
+          "name": "text",
+          "type": "string"
+        }
+      ]
     },
     {
-      "name": "valueQuantity.code",
-      "type": "string"
+      "name": "referenceRange",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "text",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "note",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "text",
+          "type": "string"
+        }
+      ]
     }
   ],
   "Patient": [
@@ -632,52 +618,6 @@ export const AttributesByResourceType = {
     {
       "name": "deceasedDateTime",
       "type": "dateTime"
-    },
-    {
-      "name": "extension",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "url",
-          "type": "string"
-        },
-        {
-          "name": "extension",
-          "type": "array",
-          "subpaths": [
-            {
-              "name": "url",
-              "type": "string"
-            },
-            {
-              "name": "valueCoding.system",
-              "type": "string"
-            },
-            {
-              "name": "valueCoding.code",
-              "type": "string"
-            },
-            {
-              "name": "valueCoding.display",
-              "type": "string"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "maritalStatus.coding",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "system",
-          "type": "string"
-        },
-        {
-          "name": "code",
-          "type": "string"
-        }
-      ]
     },
     {
       "name": "age",
@@ -768,16 +708,16 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "priority",
-      "type": "string"
-    },
-    {
       "name": "authoredOn",
       "type": "dateTime"
     },
     {
       "name": "occurrenceDateTime",
       "type": "dateTime"
+    },
+    {
+      "name": "priority",
+      "type": "string"
     }
   ]
 };

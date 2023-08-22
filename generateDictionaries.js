@@ -78,7 +78,7 @@ const recursivelyFindPaths = (
   return _.flatten(paths);
 };
 
-const basePath = "./lib/templates/";
+const basePath = "./lib/templates/CHUM_profiles/";
 const templateFileList = fs.readdirSync(basePath);
 
 const attributeDictionary = {};
@@ -101,11 +101,13 @@ for (const templateFile of templateFileList) {
     resourceAttributeDictionary
   ).filter((x) => x != "id");
 
-  attributeDictionary[resourceName] = recursivelyFindPaths(
+  const resourcePaths = recursivelyFindPaths(
     resourceAttributeDictionary,
     resourceAttributeNames,
     ""
   );
+
+attributeDictionary[resourceName] = _.unionBy(resourcePaths, attributeDictionary[resourceName], 'name');
 
   if (resourceName === 'Patient') {
     attributeDictionary[resourceName].push({

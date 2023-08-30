@@ -5,6 +5,10 @@
     // Each resource entry needs a unique id for the ndjson bulk upload
     "id": "f002",
 
+    // Business Identifier for observation.
+    // Name of the source system (Cerner, SIL-P, etc) and the Hospital 
+    "identifier": "silp-chum",
+
     // The status of the observation: registered | preliminary | final | amended +
     // (c.f. http://hl7.org/fhir/ValueSet/observation-status)
     "status": "final",

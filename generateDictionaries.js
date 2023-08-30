@@ -67,7 +67,14 @@ const recursivelyFindPaths = (
           name: prefixedAttributeName,
           type: "string"
         });
-      } else {
+      } 
+      else if(pathPrefix && prefixedAttributeName === "valueQuantity.value"){
+        paths.push({
+          name:prefixedAttributeName,
+          type: "integer"
+        })
+      }
+      else {
         paths.push({
           name: prefixedAttributeName,
           type: deduceTypeFromAttributeValue(attribute),
@@ -78,49 +85,57 @@ const recursivelyFindPaths = (
   return _.flatten(paths);
 };
 
-const basePath = "./lib/templates/CHUM_profiles/";
-const templateFileList = fs.readdirSync(basePath);
+const getAttributeDictionary = (basePath, templateFileList) => {
+  for (const templateFile of templateFileList) {
+    const templateFilePath = basePath + templateFile;
 
-const attributeDictionary = {};
+    const templateFileContent = fs.readFileSync(basePath + templateFile, "utf-8");
+    const templateFileContentWithoutComments = templateFileContent.replace(
+      /\n\s*\/\/(.*)/g,
+      ""
+    );
 
-for (const templateFile of templateFileList) {
-  const templateFilePath = basePath + templateFile;
+    const resourceAttributeDictionary = JSON.parse(
+      templateFileContentWithoutComments
+    );
 
-  const templateFileContent = fs.readFileSync(basePath + templateFile, "utf-8");
-  const templateFileContentWithoutComments = templateFileContent.replace(
-    /\n\s*\/\/(.*)/g,
-    ""
-  );
+    const resourceName = templateFile.split("-")[0].split(".")[0];
+    const resourceAttributeNames = Object.keys(
+      resourceAttributeDictionary
+    ).filter((x) => x != "id");
 
-  const resourceAttributeDictionary = JSON.parse(
-    templateFileContentWithoutComments
-  );
+    const resourcePaths = recursivelyFindPaths(
+      resourceAttributeDictionary,
+      resourceAttributeNames,
+      ""
+    );
 
-  const resourceName = templateFile.split("-")[0].split(".")[0];
-  const resourceAttributeNames = Object.keys(
-    resourceAttributeDictionary
-  ).filter((x) => x != "id");
+  attributeDictionary[resourceName] = _.unionBy(resourcePaths, attributeDictionary[resourceName], 'name');
 
-  const resourcePaths = recursivelyFindPaths(
-    resourceAttributeDictionary,
-    resourceAttributeNames,
-    ""
-  );
-
-attributeDictionary[resourceName] = _.unionBy(resourcePaths, attributeDictionary[resourceName], 'name');
-
-  if (resourceName === 'Patient') {
-    attributeDictionary[resourceName].push({
-      "name": "age",
-      "type": "integer"
-    })
-    attributeDictionary[resourceName].push({
-      "name": "isDeceased",
-      "type": "boolean"
-    })
+    if (resourceName === 'Patient') {
+      attributeDictionary[resourceName].push({
+        "name": "age",
+        "type": "integer"
+      })
+      attributeDictionary[resourceName].push({
+        "name": "isDeceased",
+        "type": "boolean"
+      })
+    }
   }
-
+  return attributeDictionary
 }
+
+var basePath = "./lib/templates/CHUM_profiles/";
+var templateFileList = fs.readdirSync(basePath);
+
+var attributeDictionary = {};
+attributeDictionary = getAttributeDictionary(basePath, templateFileList);
+
+basePath = "./lib/templates/"
+templateFileList = ['MedicationAdministration.js', 'ImagingStudy.js'];
+
+getAttributeDictionary(basePath, templateFileList);
 
 const resourceTypes = Object.keys(attributeDictionary);
 

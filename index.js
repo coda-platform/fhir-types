@@ -17,13 +17,13 @@ export const FiltersByDataType = {
 export const ResourceTypes = [
   "Condition",
   "Encounter",
-  "ImagingStudy",
   "Location",
-  "MedicationAdministration",
   "Observation",
   "Patient",
   "Procedure",
-  "ServiceRequest"
+  "ServiceRequest",
+  "MedicationAdministration",
+  "ImagingStudy"
 ]
 export const AttributesByResourceType = {
   "Condition": [
@@ -126,164 +126,6 @@ export const AttributesByResourceType = {
       "type": "dateTime"
     }
   ],
-  "ImagingStudy": [
-    {
-      "name": "resourceType",
-      "type": "string"
-    },
-    {
-      "name": "subject.reference",
-      "type": "string"
-    },
-    {
-      "name": "status",
-      "type": "string"
-    },
-    {
-      "name": "modality",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "code",
-          "type": "string"
-        },
-        {
-          "name": "system",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "identifier",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "use",
-          "type": "string"
-        },
-        {
-          "name": "system",
-          "type": "string"
-        },
-        {
-          "name": "value",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "started",
-      "type": "dateTime"
-    },
-    {
-      "name": "numberOfSeries",
-      "type": "integer"
-    },
-    {
-      "name": "numberOfInstances",
-      "type": "integer"
-    },
-    {
-      "name": "description",
-      "type": "string"
-    },
-    {
-      "name": "procedureCode",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "text",
-          "type": "string"
-        },
-        {
-          "name": "coding",
-          "type": "array",
-          "subpaths": [
-            {
-              "name": "system",
-              "type": "string"
-            },
-            {
-              "name": "code",
-              "type": "string"
-            },
-            {
-              "name": "display",
-              "type": "string"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "series",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "uid",
-          "type": "string"
-        },
-        {
-          "name": "number",
-          "type": "integer"
-        },
-        {
-          "name": "modality.system",
-          "type": "string"
-        },
-        {
-          "name": "modality.code",
-          "type": "string"
-        },
-        {
-          "name": "modality.display",
-          "type": "string"
-        },
-        {
-          "name": "bodySite.system",
-          "type": "string"
-        },
-        {
-          "name": "bodySite.code",
-          "type": "string"
-        },
-        {
-          "name": "bodySite.display",
-          "type": "string"
-        },
-        {
-          "name": "numberOfInstances",
-          "type": "integer"
-        },
-        {
-          "name": "instance",
-          "type": "array",
-          "subpaths": [
-            {
-              "name": "number",
-              "type": "integer"
-            },
-            {
-              "name": "uid",
-              "type": "dateTime"
-            },
-            {
-              "name": "sopClass.system",
-              "type": "dateTime"
-            },
-            {
-              "name": "sopClass.code",
-              "type": "string"
-            },
-            {
-              "name": "title",
-              "type": "string"
-            }
-          ]
-        }
-      ]
-    }
-  ],
   "Location": [
     {
       "name": "resourceType",
@@ -350,133 +192,13 @@ export const AttributesByResourceType = {
       "type": "string"
     }
   ],
-  "MedicationAdministration": [
-    {
-      "name": "resourceType",
-      "type": "string"
-    },
-    {
-      "name": "subject.reference",
-      "type": "string"
-    },
-    {
-      "name": "context.reference",
-      "type": "string"
-    },
-    {
-      "name": "request.reference",
-      "type": "string"
-    },
-    {
-      "name": "medicationReference.reference",
-      "type": "string"
-    },
-    {
-      "name": "contained",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "resourceType",
-          "type": "string"
-        },
-        {
-          "name": "id",
-          "type": "string"
-        },
-        {
-          "name": "code.coding",
-          "type": "array",
-          "subpaths": [
-            {
-              "name": "system",
-              "type": "string"
-            },
-            {
-              "name": "code",
-              "type": "string"
-            },
-            {
-              "name": "display",
-              "type": "string"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "status",
-      "type": "string"
-    },
-    {
-      "name": "effectivePeriod.start",
-      "type": "dateTime"
-    },
-    {
-      "name": "effectivePeriod.end",
-      "type": "dateTime"
-    },
-    {
-      "name": "effectiveDateTime",
-      "type": "dateTime"
-    },
-    {
-      "name": "dosage.text",
-      "type": "string"
-    },
-    {
-      "name": "dosage.route.coding",
-      "type": "array",
-      "subpaths": [
-        {
-          "name": "system",
-          "type": "string"
-        },
-        {
-          "name": "code",
-          "type": "string"
-        },
-        {
-          "name": "display",
-          "type": "string"
-        }
-      ]
-    },
-    {
-      "name": "dosage.dose.system",
-      "type": "string"
-    },
-    {
-      "name": "dosage.dose.unit",
-      "type": "string"
-    },
-    {
-      "name": "dosage.dose.code",
-      "type": "string"
-    },
-    {
-      "name": "dosage.dose.value",
-      "type": "integer"
-    },
-    {
-      "name": "dosage.rateQuantity.system",
-      "type": "string"
-    },
-    {
-      "name": "dosage.rateQuantity.unit",
-      "type": "string"
-    },
-    {
-      "name": "dosage.rateQuantity.code",
-      "type": "string"
-    },
-    {
-      "name": "dosage.rateQuantity.value",
-      "type": "integer"
-    }
-  ],
   "Observation": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "identifier",
       "type": "string"
     },
     {
@@ -547,7 +269,7 @@ export const AttributesByResourceType = {
     },
     {
       "name": "valueQuantity.value",
-      "type": "string"
+      "type": "integer"
     },
     {
       "name": "valueQuantity.unit",
@@ -718,6 +440,288 @@ export const AttributesByResourceType = {
     {
       "name": "priority",
       "type": "string"
+    }
+  ],
+  "MedicationAdministration": [
+    {
+      "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "subject.reference",
+      "type": "string"
+    },
+    {
+      "name": "context.reference",
+      "type": "string"
+    },
+    {
+      "name": "request.reference",
+      "type": "string"
+    },
+    {
+      "name": "medicationReference.reference",
+      "type": "string"
+    },
+    {
+      "name": "contained",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "resourceType",
+          "type": "string"
+        },
+        {
+          "name": "id",
+          "type": "string"
+        },
+        {
+          "name": "code.coding",
+          "type": "array",
+          "subpaths": [
+            {
+              "name": "system",
+              "type": "string"
+            },
+            {
+              "name": "code",
+              "type": "string"
+            },
+            {
+              "name": "display",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "effectivePeriod.start",
+      "type": "dateTime"
+    },
+    {
+      "name": "effectivePeriod.end",
+      "type": "dateTime"
+    },
+    {
+      "name": "effectiveDateTime",
+      "type": "dateTime"
+    },
+    {
+      "name": "dosage.text",
+      "type": "string"
+    },
+    {
+      "name": "dosage.route.coding",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "system",
+          "type": "string"
+        },
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "dosage.dose.system",
+      "type": "string"
+    },
+    {
+      "name": "dosage.dose.unit",
+      "type": "string"
+    },
+    {
+      "name": "dosage.dose.code",
+      "type": "string"
+    },
+    {
+      "name": "dosage.dose.value",
+      "type": "integer"
+    },
+    {
+      "name": "dosage.rateQuantity.system",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.unit",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.code",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.value",
+      "type": "integer"
+    }
+  ],
+  "ImagingStudy": [
+    {
+      "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "subject.reference",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "modality",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "system",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "identifier",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "use",
+          "type": "string"
+        },
+        {
+          "name": "system",
+          "type": "string"
+        },
+        {
+          "name": "value",
+          "type": "dateTime"
+        }
+      ]
+    },
+    {
+      "name": "started",
+      "type": "dateTime"
+    },
+    {
+      "name": "numberOfSeries",
+      "type": "integer"
+    },
+    {
+      "name": "numberOfInstances",
+      "type": "integer"
+    },
+    {
+      "name": "description",
+      "type": "string"
+    },
+    {
+      "name": "procedureCode",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "text",
+          "type": "string"
+        },
+        {
+          "name": "coding",
+          "type": "array",
+          "subpaths": [
+            {
+              "name": "system",
+              "type": "string"
+            },
+            {
+              "name": "code",
+              "type": "string"
+            },
+            {
+              "name": "display",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "series",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "uid",
+          "type": "dateTime"
+        },
+        {
+          "name": "number",
+          "type": "integer"
+        },
+        {
+          "name": "modality.system",
+          "type": "string"
+        },
+        {
+          "name": "modality.code",
+          "type": "string"
+        },
+        {
+          "name": "modality.display",
+          "type": "string"
+        },
+        {
+          "name": "bodySite.system",
+          "type": "string"
+        },
+        {
+          "name": "bodySite.code",
+          "type": "string"
+        },
+        {
+          "name": "bodySite.display",
+          "type": "string"
+        },
+        {
+          "name": "numberOfInstances",
+          "type": "integer"
+        },
+        {
+          "name": "instance",
+          "type": "array",
+          "subpaths": [
+            {
+              "name": "number",
+              "type": "integer"
+            },
+            {
+              "name": "uid",
+              "type": "dateTime"
+            },
+            {
+              "name": "sopClass.system",
+              "type": "dateTime"
+            },
+            {
+              "name": "sopClass.code",
+              "type": "string"
+            },
+            {
+              "name": "title",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     }
   ]
 };

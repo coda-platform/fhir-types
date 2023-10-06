@@ -23,7 +23,7 @@
   "physicalType": {
     "coding": [{
       // OID: 2.16.840.1.113883.4.642.1.1108
-      "system": "https://terminology.hl7.org/CodeSystem-location-physical-type.html",
+      "system": "https://terminology.hl7.org/CodeSystem-location-physical-type",
       "code": "bd",
       "display": "Bed"
     }]

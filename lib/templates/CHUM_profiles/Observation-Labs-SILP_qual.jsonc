@@ -70,17 +70,6 @@
         {
             "coding": [
                 {   
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-                    "code": "NEG",
-                    "display": "Negative"
-                }
-            ],
-            "text": "Négatif"
-        },
-
-        {
-            "coding": [
-                {   
                     "system": "http://snomed.info/sct",
                     "code": "260385009",
                     "display": "Negative"

@@ -199,7 +199,13 @@ export const AttributesByResourceType = {
     },
     {
       "name": "identifier",
-      "type": "string"
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
     },
     {
       "name": "status",

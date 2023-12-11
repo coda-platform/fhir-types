@@ -341,7 +341,7 @@ export const AttributesByResourceType = {
     },
     {
       "name": "birthDate",
-      "type": "dateTime"
+      "type": "date"
     },
     {
       "name": "deceasedDateTime",
@@ -613,7 +613,7 @@ export const AttributesByResourceType = {
         },
         {
           "name": "value",
-          "type": "dateTime"
+          "type": "string"
         }
       ]
     },
@@ -667,7 +667,7 @@ export const AttributesByResourceType = {
       "subpaths": [
         {
           "name": "uid",
-          "type": "dateTime"
+          "type": "string"
         },
         {
           "name": "number",
@@ -711,11 +711,11 @@ export const AttributesByResourceType = {
             },
             {
               "name": "uid",
-              "type": "dateTime"
+              "type": "string"
             },
             {
               "name": "sopClass.system",
-              "type": "dateTime"
+              "type": "string"
             },
             {
               "name": "sopClass.code",

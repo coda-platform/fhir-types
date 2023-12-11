@@ -3,23 +3,23 @@ const _ = require("lodash");
 
 // https://www.hl7.org/fhir/datatypes.html
 const DATETIME_REGEXP =
-  /([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?/;
+  /^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1])(T([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?(Z?|(\+|-)((0[0-9]|1[0-3]):[0-5][0-9]|14:00)))?)?)?$/;
 
 const DATE_REGEXP =
-  /([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1]))?)?/;
+  /^([0-9]([0-9]([0-9][1-9]|[1-9]0)|[1-9]00)|[1-9]000)(-(0[1-9]|1[0-2])(-(0[1-9]|[1-2][0-9]|3[0-1]))?)?$/;
 
-const TIME_REGEXP = /([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?/;
+const TIME_REGEXP = /^([01][0-9]|2[0-3]):[0-5][0-9]:([0-5][0-9]|60)(\.[0-9]+)?$/;
 
 const deduceTypeFromAttributeValue = (value) => {
   if (typeof value === "boolean") {
     return "boolean";
   } else if (typeof value === "string") {
-    if (value.match(DATETIME_REGEXP)) {
-      return "dateTime";
+    if (value.match(DATE_REGEXP)) {
+      return "date";
     } else if (value.match(TIME_REGEXP)) {
       return "time";
-    } else if (value.match(DATE_REGEXP)) {
-      return "date";
+    } else if (value.match(DATETIME_REGEXP)) {
+      return "dateTime";
     } else {
       return "string";
     }

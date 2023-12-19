@@ -1,107 +1,106 @@
 {
-    // The type of resource
-    "resourceType": "Observation",
+  // The type of resource
+  "resourceType": "Observation",
 
-    // Each resource entry needs a unique id for the ndjson bulk upload
-    "id": "f002",
+  // Each resource entry needs a unique id for the ndjson bulk upload
+  "id": "f002",
 
-    // Business Identifier for observation.
-    // Name of the source system (Cerner, SIL-P, etc) and the Hospital 
-    "identifier": [
+  // Business Identifier for observation
+  // Name of the source system (Cerner, SIL-P, etc) and the Hospital 
+  "identifier": [
+    {
+      "value": "silp-chum"
+    }
+  ],
+
+  // The status of the observation: registered | preliminary | final | amended +
+  // (c.f. http://hl7.org/fhir/ValueSet/observation-status)
+  "status": "final",
+
+  // Observation Category Codes
+  // Mark as a laboratory observation
+  "category": [
+    {
+      "coding": [
         {
-            "value": "silp-chum"
+          "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+          "code": "laboratory",
+          "display": "Laboratory"
         }
+      ]
+    }
+  ],
+
+  // Time of the observation (YYYY-MM-DDThh:mm:ss+zz:zz)
+  "effectiveDateTime": "2017-02-01T17:23:07Z",
+
+  // Time result issued (YYYY-MM-DDThh:mm:ss+zz:zz)
+  "issued": "2017-02-01T21:23:07Z",
+
+  // Patient associated with the observation
+  "subject": {
+    "reference": "Patient/3294843"
+  },
+
+  // Clinical episode associated with the observation (if possible)
+  "encounter": {
+    "reference": "Encounter/2314234"
+  },
+  
+  // LOINC code for the observation 
+  "code": {
+    "coding": [
+      {
+        "system": "http://loinc.org",
+        "code": "94500-6",
+        "display": "SARS-CoV-2 RNA Pnl Resp NAA+probe"
+      }
     ],
+    "text": "SARS-CoV-2; TAAN"
+  },
 
-    // The status of the observation: registered | preliminary | final | amended +
-    // (c.f. http://hl7.org/fhir/ValueSet/observation-status)
-    "status": "final",
+  // Value and units of measure (Not used for qualitative labs like PCR)
+  "valueQuantity": {
+    "value": " ",
+    "unit": " "
+  },
 
-    // Observation Category Codes
-    // Mark as a laboratory observation
-    "category": [
-        {
-            "coding": [
-                {
-                    "system": "http://terminology.hl7.org/CodeSystem-observation-category",
-                    "code": "laboratory",
-                    "display": "Laboratory"
-                }
-            ]
-        }
-    ],
-
-    // Time of the observation (YYYY-MM-DDThh:mm:ss+zz:zz)
-    "effectiveDateTime": "2017-02-01T17:23:07Z",
-
-    // Time result issued (YYYY-MM-DDThh:mm:ss+zz:zz)
-    "issued": "2017-02-01T21:23:07Z",
-
-    // Patient associated with the observation
-    "subject": {
-        "reference": "Patient/3294843"
-    },
-
-    // Clinical episode associated with the observation (if possible)
-    "encounter": {
-        "reference": "Encounter/2314234"
-    },
-    
-    // LOINC code for the observation 
-    "code": {
-        "coding": [
-            {
-                "system": "http://loinc.org",
-                "code": "94500-6",
-                "display": "SARS-CoV-2 RNA Pnl Resp NAA+probe"
-            }
-        ],
-        "text": "SARS-CoV-2; TAAN"
-    },
-
-    // Value and units of measure (Not used for qualitative labs like PCR)
-    "valueQuantity": {
-        "value": " ",
-        "unit": " "
-    },
-
-    // Observation interpretation codes for the interpretation of the observation 
-    "interpretation": [
-        {
-            "coding": [
-                {   
-                    "system": "http://snomed.info/sct",
-                    "code": "260385009",
-                    "display": "Negative"
-                }
-            ],
-            "text": "Négatif"
-        },
-
+  // Observation interpretation codes for the interpretation of the observation 
+  "interpretation": [
+    {
+      "coding": [
         {   
-            // Qualitative interpretation of the observation
-            "coding": [
-                {   
-                    "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
-                    "code": "N",
-                    "display": "Normal"
-                }
-            ],
-            "text": "Normal"
+          "system": "http://snomed.info/sct",
+          "code": "260385009",
+          "display": "Negative"
         }
-    ],
+      ],
+      "text": "Négatif"
+    },
+    {
+      // Qualitative interpretation of the observation
+      "coding": [
+        {   
+          "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "N",
+          "display": "Normal"
+        }
+      ],
+      "text": "Normal"
+    }
+  ],
 
-    // Reference range of the laboratory test (Not used for qualitative labs like PCR)
-    "referenceRange": [
-        {
-            "text": " "
-        }
-    ],
+  // Reference range of the laboratory test (Not used for qualitative labs like PCR)
+  "referenceRange": [
+    {
+      "text": " "
+    }
+  ],
 
-    // Notes related to the observation
-    "note": [
-        {
-            "text": "Here is a note from the doctor."
-        }
-    ]
+  // Notes related to the observation
+  "note": [
+    {
+      "text": "Here is a note from the doctor."
+    }
+  ]
 }

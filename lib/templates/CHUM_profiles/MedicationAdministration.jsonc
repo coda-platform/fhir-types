@@ -5,7 +5,8 @@
   // Unique identifier for this resource
   "id": "medadm123",
 
-  // Unique common identifier
+  // Business Identifier for observation
+  // Name of the source system (bdm, gesphar, etc) and the Hospital 
   "identifier": [
     {
       "value": "bdm-chum"

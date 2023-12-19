@@ -41,7 +41,7 @@
     },
     "coding": [
       {
-        "system": "http://hl7.org/fhir/ValueSet/medication-codes",
+        "system": "http://snomed.info/sct",
         "code": "387423006",
         "display": "Propofol"
       }

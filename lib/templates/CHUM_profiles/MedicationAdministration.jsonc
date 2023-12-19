@@ -5,7 +5,7 @@
   // Unique identifier for this resource
   "id": "medadm123",
 
-  // Business Identifier for observation
+  // Business Identifier for MedicationAdministration
   // Name of the source system (bdm, gesphar, etc) and the Hospital 
   "identifier": [
     {

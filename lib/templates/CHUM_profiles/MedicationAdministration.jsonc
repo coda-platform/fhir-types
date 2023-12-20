@@ -65,7 +65,8 @@
           "code": "47625008",
           "display": "Intravenous route (qualifier value)"
         }
-      ]
+      ],
+      "text": "I.V"
     },
     "dose": {
       "text": "10 mg"

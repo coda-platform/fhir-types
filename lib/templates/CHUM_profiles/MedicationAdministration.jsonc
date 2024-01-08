@@ -36,9 +36,6 @@
 
   // Link to the medication that was given
   "medication": {
-    "identifier": {
-      "value": "diprivan"
-    },
     "coding": [
       {
         "system": "http://snomed.info/sct",

@@ -54,6 +54,7 @@
 
   // Information on dosage and administration
   "dosage": {
+    // If Available, NA in BDM pharmacy system
     "text": "1000 mg/ 100 ml administered at 100 mg/h",
     "route": {
       "coding": [
@@ -68,6 +69,7 @@
     "dose": {
       "text": "10 mg"
     },
+    // If Available, NA in BDM pharmacy system
     "rateQuantity": {
       "text": "100 mg/h"
     }

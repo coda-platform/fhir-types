@@ -19,11 +19,12 @@
   // Code system: http://hl7.org/fhir/location-status
   "status": "active",
 
-  // Locations on a ward-level basis
+  // Physical form of the location, e.g. building, room, vehicle, road, virtual.
+  // Locations on a bed-level basis
   "physicalType": {
     "coding": [{
       // OID: 2.16.840.1.113883.4.642.1.1108
-      "system": "https://terminology.hl7.org/CodeSystem-location-physical-type",
+      "system": "https://terminology.hl7.org/CodeSystem/location-physical-type",
       "code": "bd",
       "display": "Bed"
     }]

@@ -52,37 +52,37 @@
     "coding": [
       {
         "system": "http://loinc.org",
-        "code": "718-7",
-        "display": "Hemoglobin [Mass/volume] in Blood"
+        "code": "94500-6",
+        "display": "SARS-CoV-2 RNA Pnl Resp NAA+probe"
       }
     ],
-    "text": "Hb"
+    "text": "SARS-CoV-2; TAAN"
   },
 
-  // Value and units of measure
+  // Value and units of measure (Not used for qualitative labs like PCR)
   "valueQuantity": {
-    "value": "96",
-    "unit": "g/L"
+    "value": " ",
+    "unit": " "
   },
 
-  // Observation interpretation codes for the interpretation of the observation (Not used for Quantitative Laboratories)
+  // Observation interpretation codes for the interpretation of the observation 
   "interpretation": [
     {
       "coding": [
-        {
-          "code": " ",
-          "system": " ",
-          "display": " "
+        {   
+          "system": "http://snomed.info/sct",
+          "code": "260385009",
+          "display": "Negative"
         }
       ],
-      "text": " "
+      "text": "Négatif"
     },
-    {   
+    {
       // Qualitative interpretation of the observation
       "coding": [
-        {
-          "code": "N",
+        {   
           "system": "http://terminology.hl7.org/CodeSystem/v3-ObservationInterpretation",
+          "code": "N",
           "display": "Normal"
         }
       ],
@@ -90,13 +90,13 @@
     }
   ],
 
-  // Reference range of the laboratory test
+  // Reference range of the laboratory test (Not used for qualitative labs like PCR)
   "referenceRange": [
     {
-      "text": "130 - 170 g/L"
+      "text": " "
     }
   ],
-  
+
   // Notes related to the observation
   "note": [
     {

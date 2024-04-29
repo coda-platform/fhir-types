@@ -7,7 +7,7 @@
     
   // One of https://www.hl7.org/fhir/valueset-encounter-status.html
   // planned | in-progress | on-hold | discharged | completed | cancelled | discontinued | entered-in-error | unknown
-  "status": "finished",
+  "status": "completed",
 
   // The type of the encounter: IMP (inpatient) or EMER (emergency)
   // Cf: https://www.hl7.org/fhir/v3/ActEncounterCode/vs.html

@@ -69,7 +69,7 @@
       "text": "I.V"
     },
 
-    // Dose of the medication to be administered. Use dosage.text before (at least for BDM profiling)
+    // Dose of the medication to be administered. Use dosage.text before (at least for BDM profiling) (If available or possible)
     "dose": {
       "system": "http://unitsofmeasure.org",
       "unit": "mg",
@@ -77,7 +77,7 @@
       "value": 500
     },
 
-    // Speed with which the medication was or will be introduced into the patient
+    // Speed with which the medication was or will be introduced into the patient (If available or possible)
     "rateQuantity": {
       "system": "http://unitsofmeasure.org",
       "unit": "ml/h",

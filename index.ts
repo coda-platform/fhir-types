@@ -31,6 +31,24 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "clinicalStatus.coding",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "system",
+          "type": "string"
+        },
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        }
+      ]
+    },
+    {
       "name": "subject.reference",
       "type": "string"
     },
@@ -75,16 +93,22 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "class.system",
-      "type": "string"
-    },
-    {
-      "name": "class.code",
-      "type": "string"
-    },
-    {
-      "name": "class.display",
-      "type": "string"
+      "name": "class",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "system",
+          "type": "string"
+        },
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        }
+      ]
     },
     {
       "name": "subject.reference",
@@ -117,11 +141,11 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "period.start",
+      "name": "actualPeriod.start",
       "type": "dateTime"
     },
     {
-      "name": "period.end",
+      "name": "actualPeriod.end",
       "type": "dateTime"
     }
   ],
@@ -145,7 +169,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "physicalType.coding",
+      "name": "form.coding",
       "type": "array",
       "subpaths": [
         {
@@ -223,7 +247,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "medication.coding",
+      "name": "medication.concept.coding",
       "type": "array",
       "subpaths": [
         {
@@ -241,7 +265,7 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "medication.text",
+      "name": "medication.concept.text",
       "type": "string"
     },
     {
@@ -279,12 +303,36 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "dosage.dose.text",
+      "name": "dosage.dose.system",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.text",
+      "name": "dosage.dose.unit",
       "type": "string"
+    },
+    {
+      "name": "dosage.dose.code",
+      "type": "string"
+    },
+    {
+      "name": "dosage.dose.value",
+      "type": "integer"
+    },
+    {
+      "name": "dosage.rateQuantity.system",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.unit",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.code",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.value",
+      "type": "integer"
     }
   ],
   "Observation": [
@@ -501,15 +549,11 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "performed.dateTime",
+      "name": "occurrencePeriod.start",
       "type": "dateTime"
     },
     {
-      "name": "performed.Period.start",
-      "type": "dateTime"
-    },
-    {
-      "name": "performed.Period.end",
+      "name": "occurrencePeriod.end",
       "type": "dateTime"
     }
   ],
@@ -551,6 +595,22 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "id",
+      "type": "string"
+    },
+    {
+      "name": "clinicalStatus.coding.system",
+      "type": "string"
+    },
+    {
+      "name": "clinicalStatus.coding.code",
+      "type": "string"
+    },
+    {
+      "name": "clinicalStatus.coding.display",
+      "type": "string"
+    },
+    {
       "name": "subject.reference",
       "type": "string"
     },
@@ -582,6 +642,10 @@ export const FlatAttributesByResourceType = {
   "Encounter": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {
@@ -625,17 +689,21 @@ export const FlatAttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "period.start",
+      "name": "actualPeriod.start",
       "type": "dateTime"
     },
     {
-      "name": "period.end",
+      "name": "actualPeriod.end",
       "type": "dateTime"
     }
   ],
   "Location": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {
@@ -647,15 +715,15 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "physicalType.coding.system",
+      "name": "form.coding.system",
       "type": "string"
     },
     {
-      "name": "physicalType.coding.code",
+      "name": "form.coding.code",
       "type": "string"
     },
     {
-      "name": "physicalType.coding.display",
+      "name": "form.coding.display",
       "type": "string"
     },
     {
@@ -681,6 +749,10 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "id",
+      "type": "string"
+    },
+    {
       "name": "identifier.value",
       "type": "string"
     },
@@ -701,19 +773,19 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "medication.coding.system",
+      "name": "medication.concept.coding.system",
       "type": "string"
     },
     {
-      "name": "medication.coding.code",
+      "name": "medication.concept.coding.code",
       "type": "string"
     },
     {
-      "name": "medication.coding.display",
+      "name": "medication.concept.coding.display",
       "type": "string"
     },
     {
-      "name": "medication.text",
+      "name": "medication.concept.text",
       "type": "string"
     },
     {
@@ -745,17 +817,45 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "dosage.dose.text",
+      "name": "dosage.dose.system",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.text",
+      "name": "dosage.dose.unit",
       "type": "string"
+    },
+    {
+      "name": "dosage.dose.code",
+      "type": "string"
+    },
+    {
+      "name": "dosage.dose.value",
+      "type": "integer"
+    },
+    {
+      "name": "dosage.rateQuantity.system",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.unit",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.code",
+      "type": "string"
+    },
+    {
+      "name": "dosage.rateQuantity.value",
+      "type": "integer"
     }
   ],
   "Observation": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {
@@ -849,6 +949,10 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "id",
+      "type": "string"
+    },
+    {
       "name": "gender",
       "type": "string"
     },
@@ -872,6 +976,10 @@ export const FlatAttributesByResourceType = {
   "Procedure": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {
@@ -907,21 +1015,21 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "performed.dateTime",
+      "name": "occurrencePeriod.start",
       "type": "dateTime"
     },
     {
-      "name": "performed.Period.start",
-      "type": "dateTime"
-    },
-    {
-      "name": "performed.Period.end",
+      "name": "occurrencePeriod.end",
       "type": "dateTime"
     }
   ],
   "ServiceRequest": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {

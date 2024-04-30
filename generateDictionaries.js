@@ -110,9 +110,11 @@ const getAttributeDictionary = (basePath, templateFileList, flatten) => {
     );
 
     const resourceName = templateFile.split("-")[0].split(".")[0];
-    const resourceAttributeNames = Object.keys(
-      resourceAttributeDictionary
-    ).filter((x) => x != "id");
+    let resourceAttributeNames = Object.keys(resourceAttributeDictionary);
+
+    if (!flatten) {
+      resourceAttributeNames = resourceAttributeNames.filter((x) => x != "id");
+    }
 
     const resourcePaths = recursivelyFindPaths(
       resourceAttributeDictionary,
@@ -138,7 +140,7 @@ const getAttributeDictionary = (basePath, templateFileList, flatten) => {
   return attributeDictionaryArray
 }
 
-var basePath = "./lib/templates/CHUM_profiles/";
+var basePath = "./lib/templates/CHUM_profiles/R5/";
 var templateFileList = fs.readdirSync(basePath);
 
 var attributeDictionary = {};

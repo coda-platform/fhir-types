@@ -13,9 +13,6 @@ let unionTypes = {
         [{ fhir: "performedDateTime", aidbox: "performed.dateTime" },
         { fhir: "performedPeriod", aidbox: "performed.Period" }],
 
-    "MedicationAdministration":
-        [{ fhir: "occurrencePeriod", aidbox: "occurrence.Period" }],
-
     "ServiceRequest":
         [{ fhir: "occurrenceDateTime", aidbox: "occurrence.dateTime" }],
 }

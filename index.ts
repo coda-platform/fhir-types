@@ -269,11 +269,11 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "occurrence.Period.start",
+      "name": "occurrencePeriod.start",
       "type": "dateTime"
     },
     {
-      "name": "occurrence.Period.end",
+      "name": "occurrencePeriod.end",
       "type": "dateTime"
     },
     {
@@ -789,11 +789,11 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "occurrence.Period.start",
+      "name": "occurrencePeriod.start",
       "type": "dateTime"
     },
     {
-      "name": "occurrence.Period.end",
+      "name": "occurrencePeriod.end",
       "type": "dateTime"
     },
     {

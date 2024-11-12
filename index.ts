@@ -211,7 +211,7 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "partOf.reference",
+      "name": "part.of.reference",
       "type": "string"
     }
   ],
@@ -739,7 +739,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "partOf.reference",
+      "name": "part.of.reference",
       "type": "string"
     }
   ],

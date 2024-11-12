@@ -43,6 +43,9 @@ let dbtUnionTypes = {
     [{ fhir: "occurrenceDateTime", alt: "occurrence.datetime" },
     { fhir: "occurrencePeriod", alt: "occurrence.period" },
     { fhir: "rateQuantity", alt: "rate.quantity"}],
+
+    "Location":
+    [{ fhir: "partOf", alt: "part.of" }],
 }
 
 function fixUnionTypes(resourceAttributeArrays) {

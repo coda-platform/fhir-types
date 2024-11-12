@@ -57,7 +57,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "onset.dateTime",
+      "name": "onset.datetime",
       "type": "dateTime"
     },
     {
@@ -141,11 +141,11 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "actualPeriod.start",
+      "name": "actual.period.start",
       "type": "dateTime"
     },
     {
-      "name": "actualPeriod.end",
+      "name": "actual.period.end",
       "type": "dateTime"
     }
   ],
@@ -269,11 +269,11 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "occurrencePeriod.start",
+      "name": "occurrence.period.start",
       "type": "dateTime"
     },
     {
-      "name": "occurrencePeriod.end",
+      "name": "occurrence.period.end",
       "type": "dateTime"
     },
     {
@@ -379,7 +379,7 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "effective.dateTime",
+      "name": "effective.datetime",
       "type": "dateTime"
     },
     {
@@ -417,11 +417,11 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "value.Quantity.value",
+      "name": "value.quantity.value",
       "type": "integer"
     },
     {
-      "name": "value.Quantity.unit",
+      "name": "value.quantity.unit",
       "type": "string"
     },
     {
@@ -483,11 +483,11 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "birthDate",
+      "name": "birth.date",
       "type": "date"
     },
     {
-      "name": "deceased.dateTime",
+      "name": "deceased.datetime",
       "type": "dateTime"
     },
     {
@@ -579,7 +579,7 @@ export const AttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "occurrence.dateTime",
+      "name": "occurrence.datetime",
       "type": "dateTime"
     },
     {
@@ -619,7 +619,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "onset.dateTime",
+      "name": "onset.datetime",
       "type": "dateTime"
     },
     {
@@ -689,11 +689,11 @@ export const FlatAttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "actualPeriod.start",
+      "name": "actual.period.start",
       "type": "dateTime"
     },
     {
-      "name": "actualPeriod.end",
+      "name": "actual.period.end",
       "type": "dateTime"
     }
   ],
@@ -789,11 +789,11 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "occurrencePeriod.start",
+      "name": "occurrence.period.start",
       "type": "dateTime"
     },
     {
-      "name": "occurrencePeriod.end",
+      "name": "occurrence.period.end",
       "type": "dateTime"
     },
     {
@@ -879,7 +879,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "effective.dateTime",
+      "name": "effective.datetime",
       "type": "dateTime"
     },
     {
@@ -911,11 +911,11 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "value.Quantity.value",
+      "name": "value.quantity.value",
       "type": "integer"
     },
     {
-      "name": "value.Quantity.unit",
+      "name": "value.quantity.unit",
       "type": "string"
     },
     {
@@ -957,11 +957,11 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "birthDate",
+      "name": "birth.date",
       "type": "date"
     },
     {
-      "name": "deceased.dateTime",
+      "name": "deceased.datetime",
       "type": "dateTime"
     },
     {
@@ -1049,7 +1049,7 @@ export const FlatAttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "occurrence.dateTime",
+      "name": "occurrence.datetime",
       "type": "dateTime"
     },
     {

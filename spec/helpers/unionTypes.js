@@ -1,37 +1,65 @@
-let unionTypes = {
+let aidboxUnionTypes = {
     "Condition":
-        [{ fhir: "onsetDateTime", aidbox: "onset.dateTime" }],
+        [{ fhir: "onsetDateTime", alt: "onset.dateTime" }],
 
     "Observation":
-        [{ fhir: "effectiveDateTime", aidbox: "effective.dateTime" },
-        { fhir: "valueQuantity", aidbox: "value.Quantity" }],
+        [{ fhir: "effectiveDateTime", alt: "effective.dateTime" },
+        { fhir: "valueQuantity", alt: "value.Quantity" }],
 
     "Patient":
-        [{ fhir: "deceasedDateTime", aidbox: "deceased.dateTime" }],
+        [{ fhir: "deceasedDateTime", alt: "deceased.dateTime" }],
 
     "Procedure":
-        [{ fhir: "performedDateTime", aidbox: "performed.dateTime" },
-        { fhir: "performedPeriod", aidbox: "performed.Period" }],
+        [{ fhir: "performedDateTime", alt: "performed.dateTime" },
+        { fhir: "performedPeriod", alt: "performed.Period" }],
 
     "ServiceRequest":
-        [{ fhir: "occurrenceDateTime", aidbox: "occurrence.dateTime" }],
+        [{ fhir: "occurrenceDateTime", alt: "occurrence.dateTime" }],
 }
 
-function fixAidboxUnionTypes(resourceAttributeArrays) {
+let dbtUnionTypes = {
+    "Condition":
+        [{ fhir: "onsetDateTime", alt: "onset.datetime" }],
+
+    "Observation":
+        [{ fhir: "effectiveDateTime", alt: "effective.datetime" },
+        { fhir: "valueQuantity", alt: "value.quantity" }],
+
+    "Patient":
+        [{ fhir: "deceasedDateTime", alt: "deceased.datetime" },
+        { fhir: "birthDate", alt: "birth.date" }],
+
+    "Procedure":
+        [{ fhir: "performedDateTime", alt: "performed.datetime" },
+        { fhir: "performedPeriod", alt: "performed.period" }],
+
+    "ServiceRequest":
+        [{ fhir: "occurrenceDateTime", alt: "occurrence.datetime" }],
+
+    "Encounter":
+    [{ fhir: "actualPeriod", alt: "actual.period" }],
+
+    "MedicationAdministration":
+    [{ fhir: "occurrenceDateTime", alt: "occurrence.datetime" },
+    { fhir: "occurrencePeriod", alt: "occurrence.period" },
+    { fhir: "rateQuantity", alt: "rate.quantity"}],
+}
+
+function fixUnionTypes(resourceAttributeArrays) {
     var resourceNames = Object.keys(resourceAttributeArrays);
     resourceNames.forEach(resourceName => {
         var attributeArray = resourceAttributeArrays[resourceName];
-        const resourceFields = unionTypes[resourceName];
+        const resourceFields = dbtUnionTypes[resourceName];
         if (resourceFields) {
             for (field of resourceFields) {
                 var fhirField = field.fhir;
-                var aidboxField = field.aidbox
+                var altField = field.alt
                 var indexes = attributeArray.reduce((array, attribute, index) => 
                     (attribute.name.split(".")[0] === fhirField) ? array.concat(index) : array, []) //get all matching indexes
                 for (i of indexes) {
-                    var aidboxNameSplit = attributeArray[i].name.split(".");
-                    aidboxNameSplit[0] = aidboxField;
-                    attributeArray[i].name = aidboxNameSplit.join(".");
+                    var altNameSplit = attributeArray[i].name.split(".");
+                    altNameSplit[0] = altField;
+                    attributeArray[i].name = altNameSplit.join(".");
                 }
             }
         }
@@ -39,4 +67,4 @@ function fixAidboxUnionTypes(resourceAttributeArrays) {
     });
 }
 
-module.exports = fixAidboxUnionTypes
+module.exports = fixUnionTypes

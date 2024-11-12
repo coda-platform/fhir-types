@@ -1,6 +1,6 @@
 const fs = require("fs");
 const _ = require("lodash");
-const fixAidboxUnionTypes = require("./spec/helpers/unionTypes");
+const fixUnionTypes = require("./spec/helpers/unionTypes");
 
 // https://www.hl7.org/fhir/datatypes.html
 const DATETIME_REGEXP =
@@ -136,7 +136,7 @@ const getAttributeDictionary = (basePath, templateFileList, flatten) => {
       })
     }
   }
-  fixAidboxUnionTypes(attributeDictionaryArray);
+  fixUnionTypes(attributeDictionaryArray);
   return attributeDictionaryArray
 }
 

@@ -1,6 +1,6 @@
 const fs = require("fs");
 const _ = require("lodash");
-const fixUnionTypes = require("./spec/helpers/unionTypes");
+const mapToDatabaseColumn = require("./spec/helpers/unionTypes");
 
 // https://www.hl7.org/fhir/datatypes.html
 const DATETIME_REGEXP =
@@ -136,7 +136,7 @@ const getAttributeDictionary = (basePath, templateFileList, flatten) => {
       })
     }
   }
-  fixUnionTypes(attributeDictionaryArray);
+  mapToDatabaseColumn(attributeDictionaryArray);
   return attributeDictionaryArray
 }
 

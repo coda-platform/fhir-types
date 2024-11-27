@@ -949,7 +949,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "patient_id",
       "type": "string"
     },
     {

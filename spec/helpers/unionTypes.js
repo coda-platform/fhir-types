@@ -17,7 +17,7 @@ let aidboxUnionTypes = {
         [{ fhir: "occurrenceDateTime", alt: "occurrence.dateTime" }],
 }
 
-let dbtUnionTypes = {
+let dbtMapping = {
     "Condition":
         [{ fhir: "onsetDateTime", alt: "onset.datetime" }],
 
@@ -27,7 +27,8 @@ let dbtUnionTypes = {
 
     "Patient":
         [{ fhir: "deceasedDateTime", alt: "deceased.datetime" },
-        { fhir: "birthDate", alt: "birth.date" }],
+        { fhir: "birthDate", alt: "birth.date" },
+        { fhir: "id", alt: "patient_id"}],
 
     "Procedure":
         [{ fhir: "performedDateTime", alt: "performed.datetime" },
@@ -48,11 +49,11 @@ let dbtUnionTypes = {
     [{ fhir: "partOf", alt: "part.of" }],
 }
 
-function fixUnionTypes(resourceAttributeArrays) {
+function mapToDatabaseColumn(resourceAttributeArrays) {
     var resourceNames = Object.keys(resourceAttributeArrays);
     resourceNames.forEach(resourceName => {
         var attributeArray = resourceAttributeArrays[resourceName];
-        const resourceFields = dbtUnionTypes[resourceName];
+        const resourceFields = dbtMapping[resourceName];
         if (resourceFields) {
             for (field of resourceFields) {
                 var fhirField = field.fhir;
@@ -70,4 +71,4 @@ function fixUnionTypes(resourceAttributeArrays) {
     });
 }
 
-module.exports = fixUnionTypes
+module.exports = mapToDatabaseColumn

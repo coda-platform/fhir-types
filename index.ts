@@ -319,19 +319,19 @@ export const AttributesByResourceType = {
       "type": "integer"
     },
     {
-      "name": "dosage.rateQuantity.system",
+      "name": "dosage.rate.quantity.system",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.unit",
+      "name": "dosage.rate.quantity.unit",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.code",
+      "name": "dosage.rate.quantity.code",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.value",
+      "name": "dosage.rate.quantity.value",
       "type": "integer"
     }
   ],
@@ -833,19 +833,19 @@ export const FlatAttributesByResourceType = {
       "type": "integer"
     },
     {
-      "name": "dosage.rateQuantity.system",
+      "name": "dosage.rate.quantity.system",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.unit",
+      "name": "dosage.rate.quantity.unit",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.code",
+      "name": "dosage.rate.quantity.code",
       "type": "string"
     },
     {
-      "name": "dosage.rateQuantity.value",
+      "name": "dosage.rate.quantity.value",
       "type": "integer"
     }
   ],

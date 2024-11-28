@@ -59,11 +59,10 @@ function mapToDatabaseColumn(resourceAttributeArrays) {
                 var fhirField = field.fhir;
                 var altField = field.alt
                 var indexes = attributeArray.reduce((array, attribute, index) => 
-                    (attribute.name.split(".")[0] === fhirField) ? array.concat(index) : array, []) //get all matching indexes
+                    attribute.name.includes(fhirField) ? array.concat(index) : array, []) //get all matching indexes
                 for (i of indexes) {
-                    var altNameSplit = attributeArray[i].name.split(".");
-                    altNameSplit[0] = altField;
-                    attributeArray[i].name = altNameSplit.join(".");
+                    var altName = attributeArray[i].name.replace(fhirField, altField);
+                    attributeArray[i].name = altName;
                 }
             }
         }

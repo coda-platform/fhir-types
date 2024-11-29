@@ -112,9 +112,9 @@ const getAttributeDictionary = (basePath, templateFileList, flatten) => {
     const resourceName = templateFile.split("-")[0].split(".")[0];
     let resourceAttributeNames = Object.keys(resourceAttributeDictionary);
 
-    if (!flatten) {
-      resourceAttributeNames = resourceAttributeNames.filter((x) => x != "id");
-    }
+    // if (!flatten) {
+    //   resourceAttributeNames = resourceAttributeNames.filter((x) => x != "id");
+    // }
 
     const resourcePaths = recursivelyFindPaths(
       resourceAttributeDictionary,

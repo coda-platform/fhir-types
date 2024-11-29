@@ -31,6 +31,10 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "id",
+      "type": "string"
+    },
+    {
       "name": "clinicalStatus.coding",
       "type": "array",
       "subpaths": [
@@ -86,6 +90,10 @@ export const AttributesByResourceType = {
   "Encounter": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "encounter_id",
       "type": "string"
     },
     {
@@ -155,6 +163,10 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "bed_id",
+      "type": "string"
+    },
+    {
       "name": "identifier",
       "type": "array",
       "subpaths": [
@@ -218,6 +230,10 @@ export const AttributesByResourceType = {
   "MedicationAdministration": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {
@@ -338,6 +354,10 @@ export const AttributesByResourceType = {
   "Observation": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "observation_id",
       "type": "string"
     },
     {
@@ -479,6 +499,10 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "patient_id",
+      "type": "string"
+    },
+    {
       "name": "gender",
       "type": "string"
     },
@@ -502,6 +526,10 @@ export const AttributesByResourceType = {
   "Procedure": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {
@@ -560,6 +588,10 @@ export const AttributesByResourceType = {
   "ServiceRequest": [
     {
       "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "id",
       "type": "string"
     },
     {
@@ -645,7 +677,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "encounter_id",
       "type": "string"
     },
     {
@@ -703,7 +735,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "bed_id",
       "type": "string"
     },
     {
@@ -855,7 +887,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "observation_id",
       "type": "string"
     },
     {

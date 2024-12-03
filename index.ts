@@ -155,6 +155,10 @@ export const AttributesByResourceType = {
     {
       "name": "actual.period.end",
       "type": "dateTime"
+    },
+    {
+      "name": "service_type",
+      "type": "string"
     }
   ],
   "Location": [
@@ -519,7 +523,7 @@ export const AttributesByResourceType = {
       "type": "integer"
     },
     {
-      "name": "isDeceased",
+      "name": "is_deceased",
       "type": "boolean"
     }
   ],
@@ -727,6 +731,10 @@ export const FlatAttributesByResourceType = {
     {
       "name": "actual.period.end",
       "type": "dateTime"
+    },
+    {
+      "name": "service_type",
+      "type": "string"
     }
   ],
   "Location": [
@@ -1001,7 +1009,7 @@ export const FlatAttributesByResourceType = {
       "type": "integer"
     },
     {
-      "name": "isDeceased",
+      "name": "is_deceased",
       "type": "boolean"
     }
   ],

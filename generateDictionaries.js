@@ -1,6 +1,6 @@
 const fs = require("fs");
 const _ = require("lodash");
-const mapToDatabaseColumn = require("./spec/helpers/unionTypes");
+const mapAttributesToDatabaseColumns = require("./spec/helpers/resourceAttributeHelper");
 
 // https://www.hl7.org/fhir/datatypes.html
 const DATETIME_REGEXP =
@@ -94,27 +94,20 @@ const recursivelyFindPaths = (
   return _.flatten(paths);
 };
 
-const getAttributeDictionary = (basePath, templateFileList, flatten) => {
-  var attributeDictionaryArray = {}
-  for (const templateFile of templateFileList) {
-    const templateFilePath = basePath + templateFile;
+ const processAttributeDictionary = (basePath, templateFileList, flatten) => {
+  const attributeDictionary = {};
 
-    const templateFileContent = fs.readFileSync(basePath + templateFile, "utf-8");
+  for (const templateFile of templateFileList) {
+    const templateFilePath = `${basePath}${templateFile}`;
+    const templateFileContent = fs.readFileSync(templateFilePath, "utf-8");
     const templateFileContentWithoutComments = templateFileContent.replace(
       /\n\s*\/\/(.*)/g,
       ""
     );
 
-    const resourceAttributeDictionary = JSON.parse(
-      templateFileContentWithoutComments
-    );
-
+    const resourceAttributeDictionary = JSON.parse(templateFileContentWithoutComments);
     const resourceName = templateFile.split("-")[0].split(".")[0];
-    let resourceAttributeNames = Object.keys(resourceAttributeDictionary);
-
-    // if (!flatten) {
-    //   resourceAttributeNames = resourceAttributeNames.filter((x) => x != "id");
-    // }
+    const resourceAttributeNames = Object.keys(resourceAttributeDictionary);
 
     const resourcePaths = recursivelyFindPaths(
       resourceAttributeDictionary,
@@ -123,29 +116,23 @@ const getAttributeDictionary = (basePath, templateFileList, flatten) => {
       flatten
     );
 
-    attributeDictionaryArray[resourceName] = _.unionBy(resourcePaths, attributeDictionaryArray[resourceName], 'name');
-
-    if (resourceName === 'Patient') {
-      attributeDictionaryArray[resourceName].push({
-        "name": "age",
-        "type": "integer"
-      })
-      attributeDictionaryArray[resourceName].push({
-        "name": "isDeceased",
-        "type": "boolean"
-      })
-    }
+    attributeDictionary[resourceName] = _.unionBy(
+      resourcePaths,
+      attributeDictionary[resourceName],
+      "name"
+    );
   }
-  mapToDatabaseColumn(attributeDictionaryArray);
-  return attributeDictionaryArray
-}
+
+  mapAttributesToDatabaseColumns(attributeDictionary);
+  return attributeDictionary;
+};
 
 var basePath = "./lib/templates/CHUM_profiles/R5/";
 var templateFileList = fs.readdirSync(basePath);
 
 var attributeDictionary = {};
-attributeDictionary = getAttributeDictionary(basePath, templateFileList, false);
-const flatAttributeDictionary = getAttributeDictionary(basePath, templateFileList, true);
+attributeDictionary = processAttributeDictionary(basePath, templateFileList, false);
+const flatAttributeDictionary = processAttributeDictionary(basePath, templateFileList, true);
 
 
 const resourceTypes = Object.keys(attributeDictionary);

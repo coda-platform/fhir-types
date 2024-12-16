@@ -2,7 +2,8 @@ let dbtFieldMappings = {
     "Condition": [{ fhir: "onsetDateTime", database: "onset_datetime" }],
     "Observation": [
         { fhir: "effectiveDateTime", database: "effective_datetime" },
-        { fhir: "valueQuantity", database: "value_quantity" },
+        { fhir: "valueQuantity_value", database: "value_quantity_value" },
+        { fhir: "valueQuantity_unit", database: "value_quantity_unit" },
         { fhir: "id", database: "observation_id" },
     ],
     "Patient": [
@@ -18,17 +19,22 @@ let dbtFieldMappings = {
         { fhir: "occurrenceDateTime", database: "occurrence_datetime" },
     ],
     "Encounter": [
-        { fhir: "actualPeriod", database: "actual_period" },
+        { fhir: "actualPeriod_start", database: "actual_period_start" },
+        { fhir: "actualPeriod_end", database: "actual_period_end" },
         { fhir: "id", database: "encounter_id" },
         { fhir: "location_location_reference", database: "location_reference_identifier"}
     ],
     "MedicationAdministration": [
         { fhir: "occurrenceDateTime", database: "occurrence_datetime" },
-        { fhir: "occurrencePeriod", database: "occurrence_period" },
-        { fhir: "rateQuantity", database: "rate_quantity" },
+        { fhir: "occurrencePeriod_start", database: "occurrence_period_start" },
+        { fhir: "occurrencePeriod_end", database: "occurrence_period_end" },
+        { fhir: "dosage_rateQuantity_system", database: "dosage_rate_quantity_system" },
+        { fhir: "dosage_rateQuantity_unit", database: "dosage_rate_quantity_unit" },
+        { fhir: "dosage_rateQuantity_code", database: "dosage_rate_quantity_code" },
+        { fhir: "dosage_rateQuantity_value", database: "dosage_rate_quantity_value" }
     ],
     "Location": [
-        { fhir: "partOf", database: "part_of" },
+        { fhir: "partOf_reference", database: "part_of_reference" },
         { fhir: "id", database: "bed_id" },
     ],
 };
@@ -50,24 +56,11 @@ function mapAttributesToDatabaseColumns(resourceAttributesByResource) {
 
         if (fieldMappings) {
             fieldMappings.forEach(({ fhir, database }) => {
-                // Find all matching attribute indexes
-                const matchingIndexes = attributes.reduce(
-                    (indexes, attribute, index) => {
-                        const attributeParts = attribute.name.split("_");
-                        if (attributeParts.includes(fhir)) {
-                            indexes.push(index);
-                        }
-                        return indexes;
-                    },
-                    []
-                );
-
-                // Replace the matched segment in each attribute name
-                matchingIndexes.forEach((index) => {
-                    const attributeParts = attributes[index].name.split("_");
-                    attributes[index].name = attributeParts
-                        .map((part) => (part === fhir ? database : part))
-                        .join("_");
+                // Iterate through attributes and update their names if they match the `fhir` value
+                attributes.forEach((attribute) => {
+                    if (attribute.name === fhir) {
+                        attribute.name = database; // Update the name to the mapped database value
+                    }
                 });
             });
         }
@@ -76,7 +69,6 @@ function mapAttributesToDatabaseColumns(resourceAttributesByResource) {
         return attributes;
     });
 }
-
 function addResourceSpecificAttributes(attributes, resourceType) {
     const additionalAttributes = customAttributes[resourceType];
 

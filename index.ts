@@ -705,7 +705,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "location_location_reference",
+      "name": "location_reference_identifier",
       "type": "string"
     },
     {

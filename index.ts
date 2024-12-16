@@ -35,7 +35,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "clinicalStatus.coding",
+      "name": "clinicalStatus_coding",
       "type": "array",
       "subpaths": [
         {
@@ -53,19 +53,19 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
-      "name": "onset.datetime",
+      "name": "onset_datetime",
       "type": "dateTime"
     },
     {
-      "name": "code.coding",
+      "name": "code_coding",
       "type": "array",
       "subpaths": [
         {
@@ -83,7 +83,7 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "code.text",
+      "name": "code_text",
       "type": "string"
     }
   ],
@@ -119,7 +119,7 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
@@ -127,11 +127,11 @@ export const AttributesByResourceType = {
       "type": "array",
       "subpaths": [
         {
-          "name": "location.reference",
+          "name": "location_reference",
           "type": "string"
         },
         {
-          "name": "location.display",
+          "name": "location_display",
           "type": "string"
         },
         {
@@ -139,21 +139,21 @@ export const AttributesByResourceType = {
           "type": "string"
         },
         {
-          "name": "period.start",
+          "name": "period_start",
           "type": "dateTime"
         },
         {
-          "name": "period.end",
+          "name": "period_end",
           "type": "dateTime"
         }
       ]
     },
     {
-      "name": "actual.period.start",
+      "name": "actual_period_start",
       "type": "dateTime"
     },
     {
-      "name": "actual.period.end",
+      "name": "actual_period_end",
       "type": "dateTime"
     },
     {
@@ -185,7 +185,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "form.coding",
+      "name": "form_coding",
       "type": "array",
       "subpaths": [
         {
@@ -227,7 +227,7 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "part.of.reference",
+      "name": "part_of_reference",
       "type": "string"
     }
   ],
@@ -255,19 +255,19 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
-      "name": "request.reference",
+      "name": "request_reference",
       "type": "string"
     },
     {
-      "name": "medication.concept.coding",
+      "name": "medication_concept_coding",
       "type": "array",
       "subpaths": [
         {
@@ -285,23 +285,23 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "medication.concept.text",
+      "name": "medication_concept_text",
       "type": "string"
     },
     {
-      "name": "occurrence.period.start",
+      "name": "occurrence_period_start",
       "type": "dateTime"
     },
     {
-      "name": "occurrence.period.end",
+      "name": "occurrence_period_end",
       "type": "dateTime"
     },
     {
-      "name": "dosage.text",
+      "name": "dosage_text",
       "type": "string"
     },
     {
-      "name": "dosage.route.coding",
+      "name": "dosage_route_coding",
       "type": "array",
       "subpaths": [
         {
@@ -319,39 +319,39 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "dosage.route.text",
+      "name": "dosage_route_text",
       "type": "string"
     },
     {
-      "name": "dosage.dose.system",
+      "name": "dosage_dose_system",
       "type": "string"
     },
     {
-      "name": "dosage.dose.unit",
+      "name": "dosage_dose_unit",
       "type": "string"
     },
     {
-      "name": "dosage.dose.code",
+      "name": "dosage_dose_code",
       "type": "string"
     },
     {
-      "name": "dosage.dose.value",
+      "name": "dosage_dose_value",
       "type": "integer"
     },
     {
-      "name": "dosage.rate.quantity.system",
+      "name": "dosage_rate_quantity_system",
       "type": "string"
     },
     {
-      "name": "dosage.rate.quantity.unit",
+      "name": "dosage_rate_quantity_unit",
       "type": "string"
     },
     {
-      "name": "dosage.rate.quantity.code",
+      "name": "dosage_rate_quantity_code",
       "type": "string"
     },
     {
-      "name": "dosage.rate.quantity.value",
+      "name": "dosage_rate_quantity_value",
       "type": "integer"
     }
   ],
@@ -403,7 +403,7 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "effective.datetime",
+      "name": "effective_datetime",
       "type": "dateTime"
     },
     {
@@ -411,15 +411,15 @@ export const AttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
-      "name": "code.coding",
+      "name": "code_coding",
       "type": "array",
       "subpaths": [
         {
@@ -437,15 +437,15 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "code.text",
+      "name": "code_text",
       "type": "string"
     },
     {
-      "name": "value.quantity.value",
+      "name": "value_quantity_value",
       "type": "integer"
     },
     {
-      "name": "value.quantity.unit",
+      "name": "value_quantity_unit",
       "type": "string"
     },
     {
@@ -511,11 +511,11 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "birth.date",
+      "name": "birth_date",
       "type": "date"
     },
     {
-      "name": "deceased.datetime",
+      "name": "deceased_datetime",
       "type": "dateTime"
     },
     {
@@ -537,11 +537,11 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
@@ -559,7 +559,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "code.coding",
+      "name": "code_coding",
       "type": "array",
       "subpaths": [
         {
@@ -577,15 +577,15 @@ export const AttributesByResourceType = {
       ]
     },
     {
-      "name": "code.text",
+      "name": "code_text",
       "type": "string"
     },
     {
-      "name": "occurrencePeriod.start",
+      "name": "occurrencePeriod_start",
       "type": "dateTime"
     },
     {
-      "name": "occurrencePeriod.end",
+      "name": "occurrencePeriod_end",
       "type": "dateTime"
     }
   ],
@@ -599,7 +599,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
@@ -615,7 +615,7 @@ export const AttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "occurrence.datetime",
+      "name": "occurrence_datetime",
       "type": "dateTime"
     },
     {
@@ -635,43 +635,43 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "clinicalStatus.coding.system",
+      "name": "clinicalStatus_coding_system",
       "type": "string"
     },
     {
-      "name": "clinicalStatus.coding.code",
+      "name": "clinicalStatus_coding_code",
       "type": "string"
     },
     {
-      "name": "clinicalStatus.coding.display",
+      "name": "clinicalStatus_coding_display",
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
-      "name": "onset.datetime",
+      "name": "onset_datetime",
       "type": "dateTime"
     },
     {
-      "name": "code.coding.system",
+      "name": "code_coding_system",
       "type": "string"
     },
     {
-      "name": "code.coding.code",
+      "name": "code_coding_code",
       "type": "string"
     },
     {
-      "name": "code.coding.display",
+      "name": "code_coding_display",
       "type": "string"
     },
     {
-      "name": "code.text",
+      "name": "code_text",
       "type": "string"
     }
   ],
@@ -689,47 +689,47 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "class.system",
+      "name": "class_system",
       "type": "string"
     },
     {
-      "name": "class.code",
+      "name": "class_code",
       "type": "string"
     },
     {
-      "name": "class.display",
+      "name": "class_display",
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "location.location.reference",
+      "name": "location_location_reference",
       "type": "string"
     },
     {
-      "name": "location.location.display",
+      "name": "location_location_display",
       "type": "string"
     },
     {
-      "name": "location.status",
+      "name": "location_status",
       "type": "string"
     },
     {
-      "name": "location.period.start",
+      "name": "location_period_start",
       "type": "dateTime"
     },
     {
-      "name": "location.period.end",
+      "name": "location_period_end",
       "type": "dateTime"
     },
     {
-      "name": "actual.period.start",
+      "name": "actual_period_start",
       "type": "dateTime"
     },
     {
-      "name": "actual.period.end",
+      "name": "actual_period_end",
       "type": "dateTime"
     },
     {
@@ -747,7 +747,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "identifier.value",
+      "name": "identifier_value",
       "type": "string"
     },
     {
@@ -755,31 +755,31 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "form.coding.system",
+      "name": "form_coding_system",
       "type": "string"
     },
     {
-      "name": "form.coding.code",
+      "name": "form_coding_code",
       "type": "string"
     },
     {
-      "name": "form.coding.display",
+      "name": "form_coding_display",
       "type": "string"
     },
     {
-      "name": "type.coding.system",
+      "name": "type_coding_system",
       "type": "string"
     },
     {
-      "name": "type.coding.code",
+      "name": "type_coding_code",
       "type": "string"
     },
     {
-      "name": "type.coding.display",
+      "name": "type_coding_display",
       "type": "string"
     },
     {
-      "name": "part.of.reference",
+      "name": "part_of_reference",
       "type": "string"
     }
   ],
@@ -793,7 +793,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "identifier.value",
+      "name": "identifier_value",
       "type": "string"
     },
     {
@@ -801,91 +801,91 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
-      "name": "request.reference",
+      "name": "request_reference",
       "type": "string"
     },
     {
-      "name": "medication.concept.coding.system",
+      "name": "medication_concept_coding_system",
       "type": "string"
     },
     {
-      "name": "medication.concept.coding.code",
+      "name": "medication_concept_coding_code",
       "type": "string"
     },
     {
-      "name": "medication.concept.coding.display",
+      "name": "medication_concept_coding_display",
       "type": "string"
     },
     {
-      "name": "medication.concept.text",
+      "name": "medication_concept_text",
       "type": "string"
     },
     {
-      "name": "occurrence.period.start",
+      "name": "occurrence_period_start",
       "type": "dateTime"
     },
     {
-      "name": "occurrence.period.end",
+      "name": "occurrence_period_end",
       "type": "dateTime"
     },
     {
-      "name": "dosage.text",
+      "name": "dosage_text",
       "type": "string"
     },
     {
-      "name": "dosage.route.coding.system",
+      "name": "dosage_route_coding_system",
       "type": "string"
     },
     {
-      "name": "dosage.route.coding.code",
+      "name": "dosage_route_coding_code",
       "type": "string"
     },
     {
-      "name": "dosage.route.coding.display",
+      "name": "dosage_route_coding_display",
       "type": "string"
     },
     {
-      "name": "dosage.route.text",
+      "name": "dosage_route_text",
       "type": "string"
     },
     {
-      "name": "dosage.dose.system",
+      "name": "dosage_dose_system",
       "type": "string"
     },
     {
-      "name": "dosage.dose.unit",
+      "name": "dosage_dose_unit",
       "type": "string"
     },
     {
-      "name": "dosage.dose.code",
+      "name": "dosage_dose_code",
       "type": "string"
     },
     {
-      "name": "dosage.dose.value",
+      "name": "dosage_dose_value",
       "type": "integer"
     },
     {
-      "name": "dosage.rate.quantity.system",
+      "name": "dosage_rate_quantity_system",
       "type": "string"
     },
     {
-      "name": "dosage.rate.quantity.unit",
+      "name": "dosage_rate_quantity_unit",
       "type": "string"
     },
     {
-      "name": "dosage.rate.quantity.code",
+      "name": "dosage_rate_quantity_code",
       "type": "string"
     },
     {
-      "name": "dosage.rate.quantity.value",
+      "name": "dosage_rate_quantity_value",
       "type": "integer"
     }
   ],
@@ -899,7 +899,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "identifier.value",
+      "name": "identifier_value",
       "type": "string"
     },
     {
@@ -907,19 +907,19 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "category.coding.system",
+      "name": "category_coding_system",
       "type": "string"
     },
     {
-      "name": "category.coding.code",
+      "name": "category_coding_code",
       "type": "string"
     },
     {
-      "name": "category.coding.display",
+      "name": "category_coding_display",
       "type": "string"
     },
     {
-      "name": "effective.datetime",
+      "name": "effective_datetime",
       "type": "dateTime"
     },
     {
@@ -927,59 +927,59 @@ export const FlatAttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
-      "name": "code.coding.system",
+      "name": "code_coding_system",
       "type": "string"
     },
     {
-      "name": "code.coding.code",
+      "name": "code_coding_code",
       "type": "string"
     },
     {
-      "name": "code.coding.display",
+      "name": "code_coding_display",
       "type": "string"
     },
     {
-      "name": "code.text",
+      "name": "code_text",
       "type": "string"
     },
     {
-      "name": "value.quantity.value",
+      "name": "value_quantity_value",
       "type": "integer"
     },
     {
-      "name": "value.quantity.unit",
+      "name": "value_quantity_unit",
       "type": "string"
     },
     {
-      "name": "interpretation.coding.code",
+      "name": "interpretation_coding_code",
       "type": "string"
     },
     {
-      "name": "interpretation.coding.system",
+      "name": "interpretation_coding_system",
       "type": "string"
     },
     {
-      "name": "interpretation.coding.display",
+      "name": "interpretation_coding_display",
       "type": "string"
     },
     {
-      "name": "interpretation.text",
+      "name": "interpretation_text",
       "type": "string"
     },
     {
-      "name": "referenceRange.text",
+      "name": "referenceRange_text",
       "type": "string"
     },
     {
-      "name": "note.text",
+      "name": "note_text",
       "type": "string"
     }
   ],
@@ -997,11 +997,11 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "birth.date",
+      "name": "birth_date",
       "type": "date"
     },
     {
-      "name": "deceased.datetime",
+      "name": "deceased_datetime",
       "type": "dateTime"
     },
     {
@@ -1023,15 +1023,15 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
-      "name": "encounter.reference",
+      "name": "encounter_reference",
       "type": "string"
     },
     {
-      "name": "basedOn.reference",
+      "name": "basedOn_reference",
       "type": "string"
     },
     {
@@ -1039,27 +1039,27 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "code.coding.system",
+      "name": "code_coding_system",
       "type": "string"
     },
     {
-      "name": "code.coding.code",
+      "name": "code_coding_code",
       "type": "string"
     },
     {
-      "name": "code.coding.display",
+      "name": "code_coding_display",
       "type": "string"
     },
     {
-      "name": "code.text",
+      "name": "code_text",
       "type": "string"
     },
     {
-      "name": "occurrencePeriod.start",
+      "name": "occurrencePeriod_start",
       "type": "dateTime"
     },
     {
-      "name": "occurrencePeriod.end",
+      "name": "occurrencePeriod_end",
       "type": "dateTime"
     }
   ],
@@ -1073,7 +1073,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "subject.reference",
+      "name": "subject_reference",
       "type": "string"
     },
     {
@@ -1089,7 +1089,7 @@ export const FlatAttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "occurrence.datetime",
+      "name": "occurrence_datetime",
       "type": "dateTime"
     },
     {

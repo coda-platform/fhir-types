@@ -1,33 +1,34 @@
 let dbtFieldMappings = {
-    "Condition": [{ fhir: "onsetDateTime", database: "onset.datetime" }],
+    "Condition": [{ fhir: "onsetDateTime", database: "onset_datetime" }],
     "Observation": [
-        { fhir: "effectiveDateTime", database: "effective.datetime" },
-        { fhir: "valueQuantity", database: "value.quantity" },
+        { fhir: "effectiveDateTime", database: "effective_datetime" },
+        { fhir: "valueQuantity", database: "value_quantity" },
         { fhir: "id", database: "observation_id" },
     ],
     "Patient": [
-        { fhir: "deceasedDateTime", database: "deceased.datetime" },
-        { fhir: "birthDate", database: "birth.date" },
+        { fhir: "deceasedDateTime", database: "deceased_datetime" },
+        { fhir: "birthDate", database: "birth_date" },
         { fhir: "id", database: "patient_id" },
     ],
     "Procedure": [
-        { fhir: "performedDateTime", database: "performed.datetime" },
-        { fhir: "performedPeriod", database: "performed.period" },
+        { fhir: "performedDateTime", database: "performed_datetime" },
+        { fhir: "performedPeriod", database: "performed_period" },
     ],
     "ServiceRequest": [
-        { fhir: "occurrenceDateTime", database: "occurrence.datetime" },
+        { fhir: "occurrenceDateTime", database: "occurrence_datetime" },
     ],
     "Encounter": [
-        { fhir: "actualPeriod", database: "actual.period" },
+        { fhir: "actualPeriod", database: "actual_period" },
         { fhir: "id", database: "encounter_id" },
+        { fhir: "location_location_reference", database: "location_reference_identifier"}
     ],
     "MedicationAdministration": [
-        { fhir: "occurrenceDateTime", database: "occurrence.datetime" },
-        { fhir: "occurrencePeriod", database: "occurrence.period" },
-        { fhir: "rateQuantity", database: "rate.quantity" },
+        { fhir: "occurrenceDateTime", database: "occurrence_datetime" },
+        { fhir: "occurrencePeriod", database: "occurrence_period" },
+        { fhir: "rateQuantity", database: "rate_quantity" },
     ],
     "Location": [
-        { fhir: "partOf", database: "part.of" },
+        { fhir: "partOf", database: "part_of" },
         { fhir: "id", database: "bed_id" },
     ],
 };
@@ -52,7 +53,7 @@ function mapAttributesToDatabaseColumns(resourceAttributesByResource) {
                 // Find all matching attribute indexes
                 const matchingIndexes = attributes.reduce(
                     (indexes, attribute, index) => {
-                        const attributeParts = attribute.name.split(".");
+                        const attributeParts = attribute.name.split("_");
                         if (attributeParts.includes(fhir)) {
                             indexes.push(index);
                         }
@@ -63,10 +64,10 @@ function mapAttributesToDatabaseColumns(resourceAttributesByResource) {
 
                 // Replace the matched segment in each attribute name
                 matchingIndexes.forEach((index) => {
-                    const attributeParts = attributes[index].name.split(".");
+                    const attributeParts = attributes[index].name.split("_");
                     attributes[index].name = attributeParts
                         .map((part) => (part === fhir ? database : part))
-                        .join(".");
+                        .join("_");
                 });
             });
         }

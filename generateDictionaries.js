@@ -47,7 +47,7 @@ const recursivelyFindPaths = (
   for (const attributeName of attributeNames) {
     const attribute = attributeDict[attributeName];
     const prefixedAttributeName = pathPrefix
-      ? [pathPrefix, attributeName].join(".")
+      ? [pathPrefix, attributeName].join("_")
       : attributeName;
     if (Array.isArray(attribute)) {
       if (flatten) {
@@ -66,7 +66,7 @@ const recursivelyFindPaths = (
         recursivelyFindPaths(
           attribute,
           Object.keys(attribute),
-          pathPrefix ? [pathPrefix, attributeName].join(".") : attributeName,
+          pathPrefix ? [pathPrefix, attributeName].join("_") : attributeName,
           flatten
         )
       );

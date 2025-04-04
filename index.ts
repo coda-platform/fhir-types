@@ -20,6 +20,7 @@ export const ResourceTypes = [
   "Location",
   "MedicationAdministration",
   "Observation",
+  "Observation_VitalSigns",
   "Patient",
   "Procedure",
   "ServiceRequest"
@@ -495,6 +496,92 @@ export const AttributesByResourceType = {
           "type": "string"
         }
       ]
+    }
+  ],
+  "Observation_VitalSigns": [
+    {
+      "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "observation_id",
+      "type": "string"
+    },
+    {
+      "name": "identifier",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "value",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "category",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "coding",
+          "type": "array",
+          "subpaths": [
+            {
+              "name": "system",
+              "type": "string"
+            },
+            {
+              "name": "code",
+              "type": "string"
+            },
+            {
+              "name": "display",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "effective_datetime",
+      "type": "dateTime"
+    },
+    {
+      "name": "subject_reference",
+      "type": "string"
+    },
+    {
+      "name": "code_coding",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "system",
+          "type": "string"
+        },
+        {
+          "name": "code",
+          "type": "string"
+        },
+        {
+          "name": "display",
+          "type": "string"
+        }
+      ]
+    },
+    {
+      "name": "code_text",
+      "type": "string"
+    },
+    {
+      "name": "value_quantity_value",
+      "type": "decimal"
+    },
+    {
+      "name": "value_quantity_unit",
+      "type": "string"
     }
   ],
   "Patient": [
@@ -980,6 +1067,68 @@ export const FlatAttributesByResourceType = {
     },
     {
       "name": "note_text",
+      "type": "string"
+    }
+  ],
+  "Observation_VitalSigns": [
+    {
+      "name": "resourceType",
+      "type": "string"
+    },
+    {
+      "name": "observation_id",
+      "type": "string"
+    },
+    {
+      "name": "identifier_value",
+      "type": "string"
+    },
+    {
+      "name": "status",
+      "type": "string"
+    },
+    {
+      "name": "category_coding_system",
+      "type": "string"
+    },
+    {
+      "name": "category_coding_code",
+      "type": "string"
+    },
+    {
+      "name": "category_coding_display",
+      "type": "string"
+    },
+    {
+      "name": "effective_datetime",
+      "type": "dateTime"
+    },
+    {
+      "name": "subject_reference",
+      "type": "string"
+    },
+    {
+      "name": "code_coding_system",
+      "type": "string"
+    },
+    {
+      "name": "code_coding_code",
+      "type": "string"
+    },
+    {
+      "name": "code_coding_display",
+      "type": "string"
+    },
+    {
+      "name": "code_text",
+      "type": "string"
+    },
+    {
+      "name": "value_quantity_value",
+      "type": "decimal"
+    },
+    {
+      "name": "value_quantity_unit",
       "type": "string"
     }
   ],

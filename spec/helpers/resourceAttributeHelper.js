@@ -6,6 +6,12 @@ let dbtFieldMappings = {
         { fhir: "valueQuantity_unit", database: "value_quantity_unit" },
         { fhir: "id", database: "observation_id" },
     ],
+    "Observation_VitalSigns": [
+        { fhir: "effectiveDateTime", database: "effective_datetime" },
+        { fhir: "valueQuantity_value", database: "value_quantity_value" },
+        { fhir: "valueQuantity_unit", database: "value_quantity_unit" },
+        { fhir: "id", database: "observation_id" },
+    ],
     "Patient": [
         { fhir: "deceasedDateTime", database: "deceased_datetime" },
         { fhir: "birthDate", database: "birth_date" },

@@ -14,6 +14,7 @@ let dbtFieldMappings = {
     ],
     "Patient": [
         { fhir: "deceasedDateTime", database: "deceased_datetime" },
+        { fhir: "deceasedBoolean", database: "deceased_boolean" },
         { fhir: "birthDate", database: "birth_date" },
         { fhir: "id", database: "patient_id" },
     ],
@@ -48,7 +49,6 @@ let dbtFieldMappings = {
 const customAttributes = {
     Patient: [
         { name: "age", type: "integer" },
-        { name: "is_deceased", type: "boolean" },
     ],
     Encounter: [{ name: "service_type", type: "string" }],
 };

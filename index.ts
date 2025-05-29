@@ -606,12 +606,12 @@ export const AttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "age",
-      "type": "integer"
+      "name": "deceased_boolean",
+      "type": "boolean"
     },
     {
-      "name": "is_deceased",
-      "type": "boolean"
+      "name": "age",
+      "type": "integer"
     }
   ],
   "Procedure": [
@@ -1154,12 +1154,12 @@ export const FlatAttributesByResourceType = {
       "type": "dateTime"
     },
     {
-      "name": "age",
-      "type": "integer"
+      "name": "deceased_boolean",
+      "type": "boolean"
     },
     {
-      "name": "is_deceased",
-      "type": "boolean"
+      "name": "age",
+      "type": "integer"
     }
   ],
   "Procedure": [

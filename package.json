@@ -1,6 +1,6 @@
 {
   "name": "fhir-types",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "FHIR templates for the CODA project.",
   "main": "./index.ts",
   "scripts": {

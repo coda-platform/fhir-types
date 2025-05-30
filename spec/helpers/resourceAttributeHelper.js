@@ -21,9 +21,11 @@ let dbtFieldMappings = {
     "Procedure": [
         { fhir: "performedDateTime", database: "performed_datetime" },
         { fhir: "performedPeriod", database: "performed_period" },
+        { fhir: "id", database: "procedure_id" },
     ],
     "ServiceRequest": [
-        { fhir: "occurrenceDateTime", database: "occurrence_datetime" },
+        { fhir: "occurrenceDateTime", database: "occurrence_date_time" },
+        { fhir: "id", database: "request_id" },
     ],
     "Encounter": [
         { fhir: "actualPeriod_start", database: "actual_period_start" },

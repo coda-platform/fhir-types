@@ -620,7 +620,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "procedure_id",
       "type": "string"
     },
     {
@@ -682,7 +682,7 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "request_id",
       "type": "string"
     },
     {
@@ -698,16 +698,60 @@ export const AttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "category",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "coding",
+          "type": "array",
+          "subpaths": [
+            {
+              "name": "system",
+              "type": "string"
+            },
+            {
+              "name": "code",
+              "type": "string"
+            },
+            {
+              "name": "display",
+              "type": "string"
+            }
+          ]
+        }
+      ]
+    },
+    {
       "name": "authoredOn",
       "type": "dateTime"
     },
     {
-      "name": "occurrence_datetime",
+      "name": "occurrence_date_time",
       "type": "dateTime"
     },
     {
-      "name": "priority",
-      "type": "string"
+      "name": "code",
+      "type": "array",
+      "subpaths": [
+        {
+          "name": "concept_coding",
+          "type": "array",
+          "subpaths": [
+            {
+              "name": "system",
+              "type": "string"
+            },
+            {
+              "name": "code",
+              "type": "string"
+            },
+            {
+              "name": "display",
+              "type": "string"
+            }
+          ]
+        }
+      ]
     }
   ]
 };
@@ -1168,7 +1212,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "procedure_id",
       "type": "string"
     },
     {
@@ -1218,7 +1262,7 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
-      "name": "id",
+      "name": "request_id",
       "type": "string"
     },
     {
@@ -1234,15 +1278,35 @@ export const FlatAttributesByResourceType = {
       "type": "string"
     },
     {
+      "name": "category_coding_system",
+      "type": "string"
+    },
+    {
+      "name": "category_coding_code",
+      "type": "string"
+    },
+    {
+      "name": "category_coding_display",
+      "type": "string"
+    },
+    {
       "name": "authoredOn",
       "type": "dateTime"
     },
     {
-      "name": "occurrence_datetime",
+      "name": "occurrence_date_time",
       "type": "dateTime"
     },
     {
-      "name": "priority",
+      "name": "code_concept_coding_system",
+      "type": "string"
+    },
+    {
+      "name": "code_concept_coding_code",
+      "type": "string"
+    },
+    {
+      "name": "code_concept_coding_display",
       "type": "string"
     }
   ]
